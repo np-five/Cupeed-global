@@ -2,14 +2,15 @@ package com.sparta.cupeed.global.entity;
 
 import java.time.LocalDateTime;
 
-import org.example.securityjwttemplate.common.exception.BizException;
-import org.example.securityjwttemplate.common.exception.CommonErrorCode;
 import org.hibernate.annotations.Where;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
+import com.sparta.cupeed.global.exception.BizException;
+import com.sparta.cupeed.global.exception.CommonErrorCode;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.EntityListeners;
