@@ -1,30 +1,17 @@
 package com.sparta.cupeed.global.exception;
 
-import org.springframework.http.HttpStatus;
+import com.sparta.cupeed.global.code.ResponseCode;
 
 import lombok.Getter;
+
 
 @Getter
 public class BizException extends RuntimeException {
 
-	private final ErrorCode errorCode;
+	private final ResponseCode responseCode;
 
-	public BizException(String message, ErrorCode errorCode) {
-		super(message);
-		this.errorCode = errorCode;
-	}
-
-	public BizException(ErrorCode errorCode) {
-		super(errorCode.getMessage());
-		this.errorCode = errorCode;
-	}
-	public HttpStatus getStatus() {
-		return errorCode.getStatus();
-	}
-	public String getCode() {
-		return errorCode.getCode();
-	}
-	public String getErrorMessage() {
-		return errorCode.getMessage();
+	public BizException(ResponseCode responseCode) {
+		super(responseCode.getMessage());
+		this.responseCode = responseCode;
 	}
 }

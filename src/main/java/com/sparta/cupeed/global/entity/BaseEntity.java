@@ -9,8 +9,8 @@ import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
+import com.sparta.cupeed.global.code.CommonErrorCode;
 import com.sparta.cupeed.global.exception.BizException;
-import com.sparta.cupeed.global.exception.CommonErrorCode;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.EntityListeners;
@@ -39,7 +39,7 @@ public abstract class BaseEntity {
 
 	private Long deletedBy;
 
-	public void softDelete(Long userId) {
+	public void markDeleted(Long userId) {
 		if (isDeleted()) {
 			throw new BizException(CommonErrorCode.DATA_ALREADY_DELETED);
 		}
